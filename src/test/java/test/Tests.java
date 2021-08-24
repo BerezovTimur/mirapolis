@@ -7,15 +7,15 @@ import page.LoginPage;
 public class Tests {
 
     @Test
-    void shoudSentCorrectLogin(){
+    void shoudSendCorrectLogin() throws InterruptedException {
         LoginPage loginPage = new LoginPage();
-        loginPage.sentData(DataHelper.getCorrectLogin(), DataHelper.getCorrectPassword());
+        loginPage.sendData(DataHelper.getCorrectLogin(), DataHelper.getCorrectPassword());
     }
 
     @Test
-    void shoudSentFailLogin(){
+    void shoudSendFailLogin() throws InterruptedException {
         LoginPage loginPage = new LoginPage();
-        loginPage.sentData(DataHelper.getWrongLogin(), DataHelper.getCorrectPassword());
+        loginPage.sendData(DataHelper.getWrongLogin(), DataHelper.getCorrectPassword());
     }
 
 }
