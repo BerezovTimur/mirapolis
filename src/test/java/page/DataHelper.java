@@ -17,6 +17,10 @@ public class DataHelper {
         return new Login("fominaelena");
     }
 
+    public static Login getEmptyLogin() {
+        return new Login("");
+    }
+
     public static Login getWrongLogin() {
         Faker faker = new Faker(new Locale("en"));
         val cardholder = faker.name().firstName();
@@ -30,5 +34,9 @@ public class DataHelper {
 
     public static Password getCorrectPassword() {
         return new Password("z0K6CTQR");
+    }
+
+    public static Password getEmptyPassword() {
+        return new Password("");
     }
 }

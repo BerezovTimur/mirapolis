@@ -16,20 +16,25 @@ public class LoginPage {
     private SelenideElement forgotPasswordForm = $("[class=\"mira-page-forgot-password-form\"]");
     private SelenideElement avatarButton = $("[class=\"avatar\"]");
     private SelenideElement exitButton = $("[class=\"mira-user-info-logout\"]");
+    private SelenideElement modalWindow = $("[class=\"modal\"]");
 
     public LoginPage() {
         open(loginUrl);
     }
 
-    public void sendData(DataHelper.Login login, DataHelper.Password password){
+    public void sendData(DataHelper.Login login, DataHelper.Password password) {
         loginField.setValue(login.getLogin());
         passwordField.setValue(password.getPassword());
         enterButton.click();
     }
 
-    public void closePage(){
+    public void closePage() {
         avatarButton.click();
         exitButton.click();
+    }
+
+    public void modalWindow() {
+        modalWindow.shouldBe(Condition.visible);
     }
 
     public void updatePassword() {
